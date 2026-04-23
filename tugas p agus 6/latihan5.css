@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #0ac1fe;
+}
+
+.layout {
+    display: flex;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+/* Konten utama */
+.content {
+    flex: 3;
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar {
+    flex: 1;
+}
+
+/* Judul utama */
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: #1A1A2E;
+}
+
+/* Subjudul */
+.content h2 {
+    margin-top: 24px;
+    font-size: 1.5rem;
+    color: #3A86FF;
+}
+
+/* Paragraf */
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Meta */
+.meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+/* Sidebar widget */
+.widget {
+    background: #ffffff;
+    padding: 20px;
+    border-left: 4px solid #3A86FF;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.widget h4 {
+    margin-bottom: 12px;
+    color: #1A1A2E;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget li {
+    margin-bottom: 10px;
+    color: #3A86FF;
+}
