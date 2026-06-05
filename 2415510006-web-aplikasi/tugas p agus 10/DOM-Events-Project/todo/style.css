@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#1e1e2f;
+    color:white;
+    display:flex;
+    justify-content:center;
+    padding-top:50px;
+}
+
+.app{
+    width:500px;
+}
+
+input{
+    padding:10px;
+    width:70%;
+}
+
+button{
+    padding:10px;
+    cursor:pointer;
+}
+
+li{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    padding:8px 12px;
+    background:#28283c;
+    border-radius:8px;
+    margin-bottom:6px;
+}
+
+li.done span{
+    text-decoration:line-through;
+    opacity:0.4;
+}
+
+.btn-done{
+    background:#2ecc71;
+}
+
+.btn-del{
+    background:#ff556a;
+}

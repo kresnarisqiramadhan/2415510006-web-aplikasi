@@ -1,0 +1,151 @@
+:root {
+  --bg: #f0f4f8;
+  --kartu: #fff;
+  --teks: #111;
+  --aksen: #4f46e5;
+  --border: #d1d5db;
+}
+
+.gelap {
+  --bg: #1e1e2e;
+  --kartu: #28283c;
+  --teks: #fff;
+  --aksen: #818cf8;
+  --border: #374151;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  transition: all .4s;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--kartu);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.3rem;
+  color: var(--aksen);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--aksen);
+  color: #fff;
+  transition: opacity 0.2s;
+}
+
+button:hover { opacity: 0.85; }
+
+.tab-nav {
+  display: flex;
+  gap: 8px;
+  padding: 20px 32px;
+  background: var(--kartu);
+  border-bottom: 1px solid var(--border);
+}
+
+.tombol-tab {
+  background: transparent;
+  color: var(--teks);
+  border: 2px solid var(--border);
+  opacity: 0.5;
+  transition: all .2s;
+}
+
+.tombol-tab.aktif {
+  opacity: 1;
+  border-color: #f7df1e;
+  color: var(--aksen);
+  background: transparent;
+}
+
+.panel { display: none; padding: 32px; }
+.panel.aktif { display: block; }
+
+.judul-panel {
+  margin-bottom: 16px;
+  color: var(--aksen);
+}
+
+.grid-statistik {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.kartu-stat {
+  background: var(--kartu);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  transition: background 0.4s;
+}
+
+.penghitung {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--aksen);
+  margin-bottom: 6px;
+}
+
+.kartu-stat p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.item-akordion {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.judul-akordion {
+  width: 100%;
+  text-align: left;
+  background: var(--kartu);
+  color: var(--teks);
+  border-radius: 0;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.judul-akordion:hover { opacity: 0.8; }
+
+.konten-akordion {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 16px;
+  background: var(--bg);
+}
+
+.item-akordion.terbuka .konten-akordion {
+  max-height: 400px;
+  padding: 14px 16px;
+}
+
+.item-akordion.terbuka .judul-akordion {
+  color: var(--aksen);
+  border-bottom: 1px solid var(--border);
+}
+
+.konten-akordion p { line-height: 1.7; }

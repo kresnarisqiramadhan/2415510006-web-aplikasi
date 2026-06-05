@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HurufKu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <span class="logo">HurufKu</span>
+    <div class="header-kanan">
+      <button id="theme-btn">Mode Gelap</button>
+      <button id="btn-modal">Daftar</button>
+    </div>
+  </header>
+
+  <nav class="tab-nav">
+    <button class="tombol-tab aktif" data-tab="bermain">Susun Kata</button>
+    <button class="tombol-tab" data-tab="leaderboard">Leaderboard</button>
+    <button class="tombol-tab" data-tab="panduan">Panduan</button>
+    <button class="tombol-tab" data-tab="daftar">Daftar Akun</button>
+  </nav>
+
+  <section id="bermain" class="panel aktif">
+
+    <div class="kategori-wrapper">
+      <span>Kategori:</span>
+      <button class="btn-kategori aktif" data-kat="semua">Semua</button>
+      <button class="btn-kategori" data-kat="hewan">🐾 Hewan</button>
+      <button class="btn-kategori" data-kat="benda">📦 Benda</button>
+      <button class="btn-kategori" data-kat="tempat">📍 Tempat</button>
+    </div>
+
+    <div class="info-game">
+      <div class="info-box">⏱ <span id="timer">30</span>s</div>
+      <div class="info-box">⭐ <span id="skor">0</span></div>
+      <div class="info-box">🎯 Level <span id="level">1</span></div>
+      <div class="info-box">🔥 Combo <span id="combo">0</span>x</div>
+      <div class="info-box">🏆 Best: <span id="highscore">0</span></div>
+    </div>
+
+    <div class="progress-wrapper">
+      <div class="progress-bar"><div class="progress-isian" id="progress-isian"></div></div>
+      <span id="progress-teks">0 / 10</span>
+    </div>
+
+    <div class="kotak-soal">
+      <p class="label-soal">Susun kata berikut:</p>
+      <div id="soal-kata" class="soal-kata">Tekan Mulai Game</div>
+      <p class="hint" id="hint-text"></p>
+    </div>
+
+    <div class="kotak-hasil">
+      <div id="hasil-kata">Klik huruf untuk mulai...</div>
+      <div class="tombol-aksi">
+        <button id="btn-hapus">Hapus</button>
+        <button id="btn-reset">Reset</button>
+        <button id="btn-skip">Skip (-5)</button>
+        <button id="btn-cek">Cek Jawaban</button>
+        <button id="btn-mulai">Mulai Game</button>
+      </div>
+    </div>
+
+    <div id="pesan-game" class="pesan-game tersembunyi"></div>
+
+    <div class="grid-huruf"></div>
+
+  </section>
+
+  <section id="leaderboard" class="panel">
+    <h2>🏆 Leaderboard</h2>
+    <div id="list-leaderboard" class="list-leaderboard">
+      <p class="kosong">Belum ada skor. Ayo main dulu!</p>
+    </div>
+    <button id="btn-hapus-lb" style="margin-top:16px; background:#888;">Hapus Semua</button>
+  </section>
+
+  <section id="panduan" class="panel">
+    <h2>Panduan Bermain</h2>
+    <div class="item-akordion">
+      <button class="judul-akordion">Cara Bermain</button>
+      <div class="konten-akordion">
+        <p>Pilih kategori, klik Mulai Game, lalu susun kata sesuai soal dengan mengklik huruf yang tersedia.</p>
+      </div>
+    </div>
+    <div class="item-akordion">
+      <button class="judul-akordion">Skor & Combo</button>
+      <div class="konten-akordion">
+        <p>Jawab benar dapat poin x level. Jawab benar 3x berturut-turut dapat bonus combo! Combo makin tinggi, bonus makin besar.</p>
+      </div>
+    </div>
+    <div class="item-akordion">
+      <button class="judul-akordion">Timer & Level</button>
+      <div class="konten-akordion">
+        <p>Tiap soal ada 30 detik. Makin tinggi level, timer makin cepat. Selesaikan 10 soal untuk naik level!</p>
+      </div>
+    </div>
+    <div class="item-akordion">
+      <button class="judul-akordion">Skip & Leaderboard</button>
+      <div class="konten-akordion">
+        <p>Tombol Skip bisa lewati soal tapi kena -5 poin. Skor kamu akan tersimpan di Leaderboard setelah game selesai!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="daftar" class="panel">
+    <div class="kartu-form">
+      <h2>Daftar Akun</h2>
+      <form id="formulir">
+        <div class="field">
+          <label>Nama Lengkap</label>
+          <input id="nama" type="text" placeholder="Minimal 3 karakter" />
+          <span class="pesan-error"></span>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input id="email" type="email" placeholder="contoh@email.com" />
+          <span class="pesan-error"></span>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input id="password" type="password" placeholder="Minimal 8 karakter" />
+          <div class="bilah"><div class="isian"></div></div>
+          <span class="label-kekuatan"></span>
+          <span class="pesan-error"></span>
+        </div>
+        <button type="submit">Daftar Sekarang</button>
+        <div id="sukses" class="tersembunyi">Akun berhasil dibuat!</div>
+      </form>
+    </div>
+  </section>
+
+  <div class="overlay" id="modal-gameover">
+    <div class="modal-kotak">
+      <h2>🎮 Game Over!</h2>
+      <p>Skor kamu: <strong id="skor-akhir">0</strong></p>
+      <p>Kata benar: <strong id="benar-akhir">0</strong></p>
+      <p>Combo tertinggi: <strong id="combo-akhir">0</strong></p>
+      <br/>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Masukkan namamu:</label>
+      <input id="input-nama-lb" type="text" placeholder="Nama kamu..." style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; margin-bottom:12px;" />
+      <button id="btn-simpan-skor">Simpan Skor</button>
+      <button id="btn-main-lagi" style="margin-top:8px; background:#888; display:block; width:100%;">Main Lagi</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="modal">
+    <div class="modal-kotak">
+      <h2>Selamat Datang!</h2>
+      <p>Daftar akun untuk menyimpan progress kamu.</p>
+      <button id="btn-ke-daftar">Daftar Sekarang</button>
+      <button id="btn-tutup-modal" class="btn-tutup">Nanti Saja</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

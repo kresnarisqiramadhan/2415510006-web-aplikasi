@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Proyek 3 - Dashboard Interaktif</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1> Dashboard Interaktif</h1>
+    <button id="theme-btn"> Mode Gelap</button>
+  </header>
+
+  <nav class="tab-nav">
+    <button class="tombol-tab aktif" data-tab="ikhtisar">Ikhtisar</button>
+    <button class="tombol-tab" data-tab="statistik">Statistik</button>
+    <button class="tombol-tab" data-tab="pengaturan">Pengaturan</button>
+  </nav>
+
+  <section id="ikhtisar" class="panel aktif">
+    <div class="grid-statistik">
+      <div class="kartu-stat" data-target="1200">
+        <h3 class="penghitung">0</h3>
+        <p>Total Pengguna</p>
+      </div>
+      <div class="kartu-stat" data-target="340">
+        <h3 class="penghitung">0</h3>
+        <p>Produk Terjual</p>
+      </div>
+      <div class="kartu-stat" data-target="87">
+        <h3 class="penghitung">0</h3>
+        <p>Transaksi Hari Ini</p>
+      </div>
+      <div class="kartu-stat" data-target="4200">
+        <h3 class="penghitung">0</h3>
+        <p>Pendapatan (Rb)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="statistik" class="panel">
+    <h2 class="judul-panel">📈 Statistik</h2>
+    <div class="item-akordion">
+      <button class="judul-akordion">📅 Statistik Bulanan</button>
+      <div class="konten-akordion">
+        <p>Total transaksi bulan ini meningkat 12% dibanding bulan lalu.</p>
+      </div>
+    </div>
+    <div class="item-akordion">
+      <button class="judul-akordion">👥 Data Pengguna Baru</button>
+      <div class="konten-akordion">
+        <p>Sebanyak 245 pengguna baru bergabung minggu ini.</p>
+      </div>
+    </div>
+    <div class="item-akordion">
+      <button class="judul-akordion">💰 Laporan Keuangan</button>
+      <div class="konten-akordion">
+        <p>Pendapatan kuartal ini mencapai target 95%.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengaturan" class="panel">
+    <h2 class="judul-panel">⚙️ Pengaturan</h2>
+    <div class="item-akordion">
+      <button class="judul-akordion">🎨 Tema Tampilan</button>
+      <div class="konten-akordion">
+        <p style="margin-bottom: 12px;">Pilih tampilan yang nyaman.</p>
+        <button id="theme-btn-2"> Alihkan Mode Gelap</button>
+      </div>
+    </div>
+    <div class="item-akordion">
+      <button class="judul-akordion">🔔 Notifikasi</button>
+      <div class="konten-akordion">
+        <p>Pengaturan notifikasi akan tersedia segera.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

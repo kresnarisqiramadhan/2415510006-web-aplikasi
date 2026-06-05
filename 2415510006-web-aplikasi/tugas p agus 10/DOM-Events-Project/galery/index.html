@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Galeri Foto</h1>
+
+<div class="filter-btns">
+    <button class="filter active" data-cat="all">Semua</button>
+    <button class="filter" data-cat="alam">Alam</button>
+    <button class="filter" data-cat="kota">Kota</button>
+    <button class="filter" data-cat="kuliner">Kuliner</button>
+</div>
+
+<div class="gallery">
+
+    <div class="card" data-cat="alam">
+        <img src="https://picsum.photos/300/200?random=1">
+        <p>Gunung</p>
+    </div>
+
+    <div class="card" data-cat="kota">
+        <img src="https://picsum.photos/300/200?random=2">
+        <p>Kota</p>
+    </div>
+
+    <div class="card" data-cat="kuliner">
+        <img src="https://picsum.photos/300/200?random=3">
+        <p>Kuliner</p>
+    </div>
+
+    <div class="card" data-cat="alam">
+        <img src="https://picsum.photos/300/200?random=4">
+        <p>Pantai</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
